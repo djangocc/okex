@@ -109,6 +109,15 @@ type (
 		CnvPx  okex.JSONFloat64 `json:"cnvPx"`
 	}
 )
+var(
+	BooksChannel = map[string]bool{
+		"books":true,
+		"books5":true,
+		"bbo-tbt":true,
+		"books-l2-tbt":true,
+		"books50-l2-tbt":true,
+	}
+)
 
 func (o *OrderBookEntity) UnmarshalJSON(buf []byte) error {
 	var (

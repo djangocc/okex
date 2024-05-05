@@ -3,6 +3,7 @@ package ws
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/aiviaio/okex/models/market"
 	"strings"
 
 	"github.com/aiviaio/okex"
@@ -541,7 +542,7 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 				return true
 			}
 			// order book channels
-			if strings.Contains(chName, "books") {
+			if  market.BooksChannel[chName] {
 				e := public.OrderBook{}
 				err := json.Unmarshal(data, &e)
 				if err != nil {
