@@ -44,10 +44,12 @@ type (
 		TS   okex.JSONTime      `json:"ts"`
 	}
 	OrderBookWs struct {
-		Asks     []*OrderBookEntity `json:"asks"`
-		Bids     []*OrderBookEntity `json:"bids"`
-		Checksum int                `json:"checksum"`
-		TS       okex.JSONTime      `json:"ts"`
+		Asks      []*OrderBookEntity `json:"asks"`
+		Bids      []*OrderBookEntity `json:"bids"`
+		Checksum  int                `json:"checksum"`
+		TS        okex.JSONTime      `json:"ts"`
+		PrevSeqId int                `json:"prevSeqId"`
+		SeqId     int                `json:"seqId"`
 	}
 	OrderBookEntity struct {
 		DepthPrice      float64
@@ -109,13 +111,14 @@ type (
 		CnvPx  okex.JSONFloat64 `json:"cnvPx"`
 	}
 )
-var(
+
+var (
 	BooksChannel = map[string]bool{
-		"books":true,
-		"books5":true,
-		"bbo-tbt":true,
-		"books-l2-tbt":true,
-		"books50-l2-tbt":true,
+		"books":          true,
+		"books5":         true,
+		"bbo-tbt":        true,
+		"books-l2-tbt":   true,
+		"books50-l2-tbt": true,
 	}
 )
 

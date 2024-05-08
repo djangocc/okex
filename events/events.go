@@ -21,6 +21,10 @@ type (
 		arg        map[string]interface{}
 		untypedArg []interface{}
 	}
+	OrderBookArgument struct {
+		Channel string `json:"channel"`
+		InstId  string `json:"instId"`
+	}
 	Success struct {
 		Code int            `json:"code,omitempty,string"`
 		Msg  string         `json:"msg,omitempty"`
