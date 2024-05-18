@@ -58,7 +58,14 @@ type (
 		FundingRate     okex.JSONFloat64    `json:"fundingRate"`
 		NextFundingRate okex.JSONFloat64    `json:"NextFundingRate"`
 		FundingTime     okex.JSONTime       `json:"fundingTime"`
+		Method          string              `json:"method"`
+		MaxFundingRate  string              `json:"maxFundingRate"`
+		MinFundingRate  string              `json:"minFundingRate"`
+		Premium         okex.JSONFloat64    `json:"premium"`
+		SettFundingRate okex.JSONFloat64    `json:"settFundingRate"`
+		SettState       string              `json:"settState"`
 		NextFundingTime okex.JSONTime       `json:"nextFundingTime"`
+		TS              okex.JSONTime       `json:"ts"`
 	}
 	LimitPrice struct {
 		InstID   string              `json:"instId"`
