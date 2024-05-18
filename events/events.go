@@ -48,8 +48,9 @@ type (
 		Msg   string `json:"msg"`
 	}
 	Subscribe struct {
-		Event string    `json:"event"`
-		Arg   *Argument `json:"arg"`
+		Event   string    `json:"event"`
+		Arg     *Argument `json:"arg"`
+		ConndId string    `json:"connId"`
 	}
 	Unsubscribe struct {
 		Event string    `json:"event"`
