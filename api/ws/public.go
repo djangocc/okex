@@ -460,14 +460,14 @@ func (c *Public) Process(data []byte, e *events.Basic) bool {
 			}()
 			return true
 		case "opt-summary":
-			e := public.OPTIONSummary{}
+			e := public.FundingRate{}
 			err := json.Unmarshal(data, &e)
 			if err != nil {
 				return false
 			}
 			go func() {
-				if c.osCh != nil {
-					c.osCh <- &e
+				if c.frCh != nil {
+					c.frCh <- &e
 				}
 			}()
 			return true
